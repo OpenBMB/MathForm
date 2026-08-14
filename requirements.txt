@@ -1,0 +1,5 @@
+aiohttp
+numpy
+requests
+tqdm
+kimina-client

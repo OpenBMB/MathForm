@@ -1,0 +1,121 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lean-explore"
+version = "0.3.0"
+authors = [
+    { name = "Justin Asher", email = "justinchadwickasher@gmail.com" },
+]
+description = "A search engine for Lean 4 declarations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["lean", "lean4", "search", "formal methods", "theorem prover", "math", "AI"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Text Processing :: Indexing",
+]
+
+dependencies = [
+    # Core data and search (primarily for local backend)
+    "sqlalchemy>=2.0",
+    "numpy>=1.20",
+    "faiss-cpu>=1.7",
+    "sentence-transformers>=2.2.0",
+    "filelock>=3.0.0",
+    "nltk>=3.6",
+    "rank-bm25>=0.2.2",
+
+    # API Client / Shared Data Models
+    "httpx>=0.23.0",
+    "pydantic>=2.0",
+
+    # CLI & Agent Functionality
+    "typer[all]>=0.9.0",
+    "toml>=0.10.0",
+    "openai-agents>=0.0.16",
+
+    # MCP Server Components
+    "mcp>=1.9.0",
+
+    # Utilities
+    "tqdm>=4.60",
+    "requests>=2.25.0",
+]
+
+[project.urls]
+Homepage = "https://www.leanexplore.com/"
+Repository = "https://github.com/justincasher/lean-explore"
+
+[project.scripts]
+leanexplore = "lean_explore.cli.main:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
+
+# -- Ruff Configuration --
+
+[tool.ruff]
+# Set the maximum line length.
+line-length = 88
+
+# Set based on your `requires-python = ">=3.8"`.
+target-version = "py38"
+
+# Define the patterns for files Ruff should lint.
+include = [
+    "src/**/*.py",
+    "tests/**/*.py",
+    "scripts/**/*.py",
+    "*.py"
+]
+
+# Specify directories and patterns to exclude from linting.
+exclude = [
+    ".venv",
+    ".ruff_cache",
+    "build",
+    "dist",
+    ".env",
+    ".env.example",
+    ".pytest_cache",
+    ".lake_cache",       # For Lean 4 projects
+    "src/*.egg-info",    # Build artifacts
+    "site",              # Documentation sites (e.g., MkDocs)
+    "docs",              # Documentation source files
+    "*.sqlite",
+    "*.db",
+    "*.json",
+]
+
+# --- Linter specific settings ---
+[tool.ruff.lint]
+# E: pycodestyle errors
+# W: pycodestyle warnings
+# F: Pyflakes
+# I: isort
+# UP: pyupgrade
+# D: pydocstyle
+select = ["E", "W", "F", "I", "UP", "D"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["lean_explore"]
+
+[tool.ruff.lint.pydocstyle]
+# Set the docstring convention to Google style.
+convention = "google"
