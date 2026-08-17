@@ -38,7 +38,7 @@ autoformalizer evaluation.
 
 ## News
 
-- `[2026.08.14]`: MathForm paper, code, and data released.
+- **`[2026.08.17]`**: MathForm [paper](https://arxiv.org/abs/2608.14221), [code](https://github.com/OpenBMB/MathForm), [data](https://huggingface.co/datasets/openbmb/FormalVerse) and [model](https://huggingface.co/openbmb/MathForm-8B) are released. 🔥🔥🔥
 
 ## 📁 Repository Structure
 

@@ -28,7 +28,7 @@
 
 ## 新闻
 
-- `[2026.08.14]`：MathForm 论文、代码和数据正式发布。
+- **`[2026.08.17]`**: MathForm [论文](https://arxiv.org/abs/2608.14221), [代码](https://github.com/OpenBMB/MathForm), [数据](https://huggingface.co/datasets/openbmb/FormalVerse) 和 [模型](https://huggingface.co/openbmb/MathForm-8B) 正式发布。🔥🔥🔥
 
 ## 📁 仓库结构
 
