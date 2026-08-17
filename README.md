@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper">
+  <a href="https://arxiv.org/abs/2608.14221"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b.svg" alt="Paper"></a>
   <a href="https://huggingface.co/datasets/openbmb/FormalVerse"><img src="https://img.shields.io/badge/🤗%20Dataset-FormalVerse-yellow.svg" alt="FormalVerse Dataset"></a>
   <a href="https://huggingface.co/openbmb/MathForm-8B"><img src="https://img.shields.io/badge/🤗%20Model-MathForm--8B-informational.svg" alt="MathForm-8B Model"></a>
 </p>
@@ -151,10 +151,14 @@ To evaluate another benchmark or change the number of samples, set
 If you find this repository useful, please cite our paper:
 
 ```bibtex
-@misc{pu2026mathform,
-  title  = {MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement},
-  author = {Lushi Pu and Weiming Zhang and Xinheng Xie and Zixuan Fu and Bingxiang He and Hengyu Zhao and Hongya Lyu and Xin Li and Jie Zhou and Yudong Wang},
-  year   = {2026}
+@misc{pu2026mathformscalingmathematicalautoformalization,
+      title={MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement},
+      author={Lushi Pu and Weiming Zhang and Xinheng Xie and Zixuan Fu and Bingxiang He and Hengyu Zhao and Hongya Lyu and Xin Li and Jie Zhou and Yudong Wang},
+      year={2026},
+      eprint={2608.14221},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2608.14221},
 }
 ```
 
